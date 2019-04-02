@@ -15,17 +15,7 @@ return [
     "Continent",
     "Space locations",
     "Other"
-  ],
-  "humanitarian"=>[
-    "Affected individuals",
-    "Infrastructure and utility damage",
-    "Injured or dead people",
-    "Missing or found people",
-    "Rescue, volunteering or donation effort",
-    "Vehicle damage",
-    "None"
   ]
-
 ]
 
  ?>

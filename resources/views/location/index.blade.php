@@ -75,11 +75,7 @@
                     <input class="form-control" id="id" name="tweet_id">
                   </div>
 
-                  {{--<div class="radio">
-                    <label >Annotated?</label>
-                    <label class="radio-inline"><input type="radio" name="annotated" value="1">Yes</label>
-                    <label class="radio-inline"><input type="radio" name="annotated" checked value="0">No</label>
-                  </div>--}}
+                  
                   <button type="submit" class="btn btn-default">Search</button>
                   <a href="?" class="btn btn-default">Clear</a>
                 </form>
@@ -156,26 +152,7 @@
                             </div>
                             <div class="form-container">
                             </div>
-                            {{--<div class="form-group">
-
-                                <div class="col-sm-3" style="padding:2px;width:100%">
-                                    <select class="form-control" style="width:100%" id="humanitarian_{{$tweet->id}}" name="humanitarian">
-                                        <option value="" disabled  @if($tweet->locationRelevance) @if(!$tweet->locationRelevance->humanitarian) selected @endif @else selected @endif >Select humanitarian category</option>
-                                        @foreach($humanitarian as $h)
-                                          <option @if($tweet->locationRelevance) @if($tweet->locationRelevance->humanitarian == $h) selected @endif @endif value="{{$h}}">Humanitarian: {{$h}}</option>
-                                        @endforeach
-                                    </select>
-                                </div>
-                            </div>
-                            <div class="form-group">
-
-
-                                <div class="col-sm-3" style="padding:2px;width:100%">
-                                  <label >Eye witness?</label>
-                                  <label class="radio-inline"><input type="radio" name="eye_witness" @if($tweet->locationRelevance) @if($tweet->locationRelevance->eye_witness) checked @endif @endif  value="1">Yes</label>
-                                  <label class="radio-inline"><input type="radio" name="eye_witness" @if($tweet->locationRelevance) @if(!$tweet->locationRelevance->eye_witness) checked @endif @else checked @endif value="0">No</label>
-                                </div>
-                            </div>--}}
+                            
                             <div class="form-group" style="float:right">
                                 <div class="col-sm-offset-0 col-sm-1">
                                   @if($tweet->locationRelevance)

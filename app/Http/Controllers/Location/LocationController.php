@@ -52,8 +52,7 @@ class LocationController extends Controller
       $tweets = Tweets::doesntHave("locationLabels")->doesntHave("locationRelevance")->orderBy("id")->paginate(1);
       return view('location.index')
         ->with("tweets",$tweets)
-        ->with("categories",config("location.categories"))
-        ->with("humanitarian",config("location.humanitarian"));
+        ->with("categories",config("location.categories"));
   }
   public function save(Request $request)
   {
@@ -65,9 +64,7 @@ class LocationController extends Controller
       $validation = Validator::make($request->all(),[
         "tweet_id"=>"exists:location_tweets,id",
         "location"=>"array|parallel_array:location_type",
-        "location_type"=>"array",
-        "humanitarian"=>"in:".implode(",",config('location.humanitarian'))."",
-        "eye_witness"=>"in:1,0"
+        "location_type"=>"array"
   		],[
   			"parallel_array"=>"Invalid input: locations and location type counts are different."
   		]);
@@ -86,8 +83,6 @@ class LocationController extends Controller
         ];
       }
       $data=[
-        "humanitarian"=>$request->get("humanitarian",null),
-        "eye_witness"=>$request->get("eye_witness",0),
         "labels"=>$labels
       ];
       DB::transaction(function () use($tweet,$data) {

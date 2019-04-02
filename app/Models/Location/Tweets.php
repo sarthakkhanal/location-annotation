@@ -29,9 +29,7 @@ class Tweets extends Model
       "tweet_id"=>$this->id,
       "user_id"=>Auth::user()->id
     ],[
-      "relevance"=>$relevance,
-      "humanitarian"=>$data["humanitarian"],
-      "eye_witness"=>$data["eye_witness"]
+      "relevance"=>$relevance
     ]);
 
     foreach($data["labels"] as $datum){
